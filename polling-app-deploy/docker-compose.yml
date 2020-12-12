@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: polling_app
+      MYSQL_ROOT_PASSWORD: polling
+  backend:
+    build:
+      context: backend/.
+    image: sd/polling-backend
+    container_name: polling_backend
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: frontend/.
+    image: sd/polling-frontend
+    container_name: polling_frontend
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - backend
