@@ -14,13 +14,67 @@ I've written a complete tutorial series for this application on The CalliCoder B
 
 + [Part 4: Building the front-end using React and Ant Design](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-4/)
 
+## Steps to Setup the full project with Docker
+
+1. **Install Docker Engine**
+	
+	Download and install Docker throught the [Official Installation Guide](https://docs.docker.com/engine/install/).
+
+2. **Clone the application**
+
+	```bash
+	git clone https://github.com/tornellihenrique/pulling-app.git
+	cd pulling-app
+	```
+
+4. **Change the local IP Host**
+
+	This is necessary for the docker to work properly and recognize other containers.
+	
+	To get your IP, simply use the following command:
+	```bash
+	ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+	```
+
+	+ open `polling-app-server/src/main/resources/application.properties` file.
+	+ change `spring.datasource.url` replacing the `{HOST}` with your local IP.
+	
+	+ open `polling-app-client/src/constants/index.js` file.
+	+ change `API_BASE_URL` const replacing the `{HOST}` with your local IP.
+
+5. **Build the React Front end app (polling-app-client)**
+
+	```bash
+	cd polling-app-client
+	npm install
+	npm run build
+	cd ..
+	```
+
+6. **Build the Spring Boot Back end app (polling-app-server)**
+
+	```bash
+	cd polling-app-server
+	npm clean package
+	cd ..
+	```
+
+7. **Run docker-compose**
+
+	This will also create a MySQL database container for the project.
+
+	```bash
+	cd polling-app-deploy
+	sudo bash run-compose-up.sh
+	```
+
 ## Steps to Setup the Spring Boot Back end app (polling-app-server)
 
 1. **Clone the application**
 
 	```bash
-	git clone https://github.com/callicoder/spring-security-react-ant-design-polls-app.git
-	cd polling-app-server
+	git clone https://github.com/tornellihenrique/pulling-app.git
+	cd pulling-app/polling-app-server
 	```
 
 2. **Create MySQL database**
