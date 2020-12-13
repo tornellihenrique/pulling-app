@@ -9,6 +9,8 @@ services:
     environment:
       MYSQL_DATABASE: polling_app
       MYSQL_ROOT_PASSWORD: polling
+    volumes:
+      - /tmp/datadir:/var/lib/mysql
   backend:
     build:
       context: backend/.
