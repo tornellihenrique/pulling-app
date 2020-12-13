@@ -55,7 +55,7 @@ I've written a complete tutorial series for this application on The CalliCoder B
 
 	```bash
 	cd polling-app-server
-	npm clean package
+	mvn clean package
 	cd ..
 	```
 
