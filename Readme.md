@@ -2,18 +2,6 @@
 
 ![App Screenshot](screenshot.png)
 
-### Tutorials
-
-I've written a complete tutorial series for this application on The CalliCoder Blog -
-
-+ [Part 1: Bootstrapping the Project and creating the basic domain models and repositories](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-1/)
-
-+ [Part 2: Configuring Spring Security along with JWT authentication and Building Rest APIs for Login and SignUp](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-2/)
-
-+ [Part 3: Building Rest APIs for creating Polls, voting for a choice in a Poll, retrieving user profile etc](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-3/)
-
-+ [Part 4: Building the front-end using React and Ant Design](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-4/)
-
 ## Steps to Setup the full project with Docker
 
 1. **Install Docker Engine**
@@ -55,7 +43,7 @@ I've written a complete tutorial series for this application on The CalliCoder B
 
 	```bash
 	cd polling-app-server
-	npm clean package
+	mvn clean package
 	cd ..
 	```
 
@@ -131,3 +119,15 @@ npm install && npm start
 ```
 
 The front-end server will start on port `3000`.
+
+### Tutorials
+
+Rajeev written a complete tutorial series for this application on The CalliCoder Blog -
+
++ [Part 1: Bootstrapping the Project and creating the basic domain models and repositories](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-1/)
+
++ [Part 2: Configuring Spring Security along with JWT authentication and Building Rest APIs for Login and SignUp](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-2/)
+
++ [Part 3: Building Rest APIs for creating Polls, voting for a choice in a Poll, retrieving user profile etc](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-3/)
+
++ [Part 4: Building the front-end using React and Ant Design](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-4/)
